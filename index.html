@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            border: 1px solid red;
+            background-color: pink;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Determining this in Javascrpit</h1>
-    
+
     <ol>
-        <li>是不是 ```new```起來的? 如果是, this就是那個被new出來的物件</li>
+        <li>是不是 <span>new</span>起來的? 如果是, this就是那個被new出來的物件</li>
         <li>是不是被explicit binding? call或apply, 或甚至hard binding 例如: foo.bind(obj, arg)
-```var bar = foo.call( obj2 )```</li>
+            <span>var bar = foo.call( obj2 )</span></li>
         <li>是否有context物件呼叫, 如果有, 該物件就是this
-```var bar = obj1.foo()```</li>
+            <span>var bar = obj1.foo()</span></li>
         <li>以上皆不是, 就是default binding, strict mode是undefined, 否則就是global物件</li>
     </ol>
     <p>以上照順序分辨 如果先滿足, 後面就不必看</p>
 </body>
+
 </html>
-
-
